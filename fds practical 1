@@ -1,0 +1,70 @@
+students = []
+size = int(input("Enter total number of students: "))
+print("enter number of students")
+for i in range(size):
+    print("Enter number of student", i)
+    num = input()
+    students.append(num)
+
+#list of students who play cricket
+cricket = []
+size = int(input("Enter total number of students who play cricket: "))
+for j in range(size):
+    print("enter number of students who play cricket", j)
+    num1 = input()
+    cricket.append(num1)
+
+
+#list of students who play badminton
+badminton = []
+size = int(input("Enter total number of students who play badminton: "))
+for j in range(size):
+    print("enter number of students who play badminton", j)
+    num2 = input()
+    badminton.append(num2)
+
+#list of students who play football
+football = []
+size = int(input("Enter total number of students who play football: "))
+for j in range(size):
+    print("enter number of student who play football", j)
+    num3 = input()
+    football.append(num3)
+
+
+#list of students who play both cricket and badminton
+both_CB = []
+for i in cricket:
+    if i in badminton:
+        both_CB.append(i)
+print("both cricket and badminton players are", both_CB)
+
+#list of students who play either cricket or badminton not both
+eitherCB_NB = []
+for i in cricket:
+    if i not in both_CB:
+        eitherCB_NB.append(i)
+for i in badminton:
+    if i not in both_CB:
+        eitherCB_NB.append(i)
+print(" students who play either cricket or badminton not both", eitherCB_NB)
+
+#list of students who play neither cricket nor badminton
+neitherCB = []
+for i in students:
+    if i not in cricket and badminton:
+        neitherCB.append(i)
+print("students who play neither cricket or badminton", neitherCB)
+
+#students who play cricket and football
+cricandfoot = []
+for i in students:
+    if i in cricket and football:
+        cricandfoot.append(i)
+
+#list of students who play cricket and football but not badminton
+CF_NOTB = []
+for i in cricket and football:
+    if i not in badminton:
+        CF_NOTB.append(i)
+print("students who play cricket and football but not badminton", CF_NOTB)
