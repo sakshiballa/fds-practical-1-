@@ -1,0 +1,16 @@
+def intersection(A, B):
+   C = [i for i in A if i in B]
+   return C
+
+A=list()
+B=list()
+n=int(input("Enter the size of the List :"))
+print("Enter the elements of first list:")
+for i in range(int(n)):
+   k=int(input(""))
+   A.append(k)
+print("Enter the elements of second list:")
+for i in range(int(n)):
+   k=int(input(""))
+   B.append(k)
+print("Intersection of two lists is : ",intersection(A, B))
