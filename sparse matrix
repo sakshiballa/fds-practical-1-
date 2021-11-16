@@ -1,0 +1,53 @@
+def convert_matrix(rows, col):
+
+    global mat
+
+    mat = []
+
+    for i in range(rows):
+
+        row = []
+
+        for j in range(col):
+
+            element = int(input("Enter elements of matrix: "))
+
+            row.append(element)
+
+        mat.append(row)
+
+    return mat
+
+def sparse_matrix(mat,rows, col):
+
+    sparse_matrix = []
+
+    for i in range(rows):
+
+        for j in range(col):
+
+              list1 = []  
+
+              if mat[i][j]!=0:
+
+                  list1.append(i) 
+
+                  list1.append(j)
+
+                  list1.append(mat[i][j])
+
+                  sparse_matrix.append(list1)
+
+    return sparse_matrix
+
+
+
+row1 = int(input("Enter number of rows: "))
+
+col1 = int(input("Enter number of columns: "))
+
+mat1=create_matrix(row1,col1)
+
+print(mat1)
+
+print(sparse_matrix(mat1,row1, col1))
