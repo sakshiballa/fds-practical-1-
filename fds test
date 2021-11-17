@@ -1,0 +1,45 @@
+emp=True
+while emp==True:
+        total=0
+        overtime_salary=0
+        name=input("Enter the employee name : ")
+        designation=input("Enter designation(manager/leader/member): ")
+        month = { "january" : 31 , "february" : 28 , "march" : 31 , "april" : 30 , "may" : 31 , 
+                 "june" : 30 , "july" : 31 , "aug" : 31 , "sept" : 30 , "oct" : 31 , "nov" : 30 , "dec":31}
+        months=input("Enter the month for Salary: ")
+        
+        days=int(input("How many days is the employee present? "))
+        
+        if days>month[months]:
+            print("Wrong input,there are only",month[months],"days")
+            
+        else:
+            pass
+
+            overtime=int(input("Enter the overtime days: "))
+            if overtime>10:
+                print("Wrong Input")
+            else:
+                pass
+            
+            
+                if designation=='manager':
+                    salary=2000*days
+                    overtime_salary=(2000*overtime)/2
+                    total=salary+overtime_salary
+                    
+                elif designation=='leader':
+                    salary=1800*days
+                    overtime_salary=(1800*overtime)/2
+                    total=salary+overtime_salary
+                    
+                elif designation=='member':
+                    salary=1500*days
+                    overtime_salary=(1500*overtime)/2
+                    total=salary+overtime_salary
+                print(f"Name: {name} \nDesignation: {designation}   \nDays worked :{days}  \novertime days:{overtime} \novertime salary:{overtime_salary}  \ntotal salary:{total}Rs")
+                cont = input("Do you want to continue? ")
+                if cont == "yes":
+                    emp=True
+                elif cont =="no":
+                    print("Thank you ")
