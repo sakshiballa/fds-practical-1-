@@ -1,0 +1,26 @@
+print("Instructions :\nTo deposite your Money = D amount \
+      \nTo withdraw = W amount \nFor Example :- D 200,W 100\n")
+
+data = input("please enter your choice\n")
+ls = []
+ls.append(data.split(','))
+ls = ls[0]
+
+print("\n")
+balance = 0
+for item in ls:
+    item = item.split(" ")
+    action = item[0]
+    amount = int(item[1])
+    if action == "D":
+      balance = balance+amount
+      print(f"You Deposited {amount}.00 Rs")
+    elif action == "W":
+      balance = balance-amount
+      if balance < 0:
+        print("insufficient balance to withdraw..!")
+      else:
+        print(f"You Withdraw {amount}.00 Rs")    
+      
+
+print(f"Your current balance is : {balance}.00 Rs")
