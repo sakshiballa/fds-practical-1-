@@ -1,14 +1,15 @@
-a = []
-number = int(input("Please Enter the Total Number of Elements : "))
-for i in range(number):
-    value = int(input("Please enter the %d Element of List1 : " %i))
-    a.append(value)
+def bubble(n,arr):
+  for i in range(n):
+    for j in range(0,n-i-1):
+      if arr[j]>arr[j+1]:
+        arr[j],arr[j+1]=arr[j+1],arr[j]
 
-for i in range(number -1):
-    for j in range(number - i - 1):
-        if(a[j] > a[j + 1]):
-             temp = a[j]
-             a[j] = a[j + 1]
-             a[j + 1] = temp
-
-print("The Sorted List is : ", a)
+n=int(input("Enter the total number of elements: "))
+print("Enter elements: ")
+arr={}
+for i in range(0,n):
+  arr[i]=int(input())
+bubble(n,arr)
+print("Sorted elements: ")
+for i in range(n):
+  print(arr[i])
