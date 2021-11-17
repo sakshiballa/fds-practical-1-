@@ -1,0 +1,18 @@
+n=int(input("Enter total number of students: "))
+s=[]
+for i in range(n):
+    r=int(input(f"Enter roll number: "))
+    s.append(r)
+def shellsort(arr,n):
+    gap=n//2
+    while gap>0:
+        for i in range(gap,n):
+            temp=arr[i]
+            j=i
+            while(j>=gap and arr[j-gap]>temp):
+                arr[j]=arr[j-gap]
+                j=j-gap
+            arr[j]=temp
+        gap=gap//2
+shellsort(s,len(s))
+print("sorted numbers are: ",s)         
