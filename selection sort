@@ -1,0 +1,15 @@
+n=int(input("Enter total number of students: "))
+s=[]
+for i in range(n):
+    r=int(input(f"Enter roll number: "))
+    s.append(r)
+
+def SelectionSort(arr):
+    for i in range(len(arr)):
+        min_idx = i
+        for j in range(i+1,len(arr)):
+            if arr[min_idx] > arr[j]:
+                min_idx = j
+        arr[i], arr[min_idx] = arr[min_idx], arr[i]
+SelectionSort(s)
+print("sorted numbers are: ",s)  
